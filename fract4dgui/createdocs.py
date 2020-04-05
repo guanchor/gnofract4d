@@ -93,8 +93,8 @@ class CommandPrinter:
 
         print('</sect2>', file=self.f)
 
-
-@patch('fract4dgui.main_window.MainWindow.__init__')
+# This was throwing an exception 'main takes 1 positional argument but 2 were given'
+#@patch('fract4dgui.main_window.MainWindow.__init__')
 def main(outfile):
     out = open(outfile, "w")
     printer = CommandPrinter(out)

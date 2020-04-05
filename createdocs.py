@@ -10,6 +10,7 @@
 
 import sys
 import os
+import traceback
 
 def create_stdlib_docs():
     'Autogenerate docs'
@@ -30,6 +31,7 @@ def create_stdlib_docs():
     except Exception as err:
         print("Problem creating docs. Online help will be incomplete.", file=sys.stderr)
         print(err, file=sys.stderr)
+        traceback.print_exc(file=sys.stderr)
         sys.exit(1)
 
 create_stdlib_docs()
